@@ -24,7 +24,7 @@ jobs:
           asciidoctor docs/index.adoc
           find . -name .adoc -exec rm -rf '{}' \;
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         if: contains(github.ref,'refs/heads/main')
         with:
           branch: gh-pages
