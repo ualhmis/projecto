@@ -1,0 +1,20 @@
+////
+Nombre y título del trabajo
+////
+= Proyecto HMIS
+:navtitle: Introducción
+
+_Herramientas y Métodos de Ingeniería del Software. Universidad de Almería_
+
+Joaquín Cañadas <jjcanada@ual.es>
+
+_Version_ *{page-component-display-version}*
+
+
+.Realización y entrega
+****
+La realización de estas actividades se realizará en equipo. 
+
+La entrega será mediante el envío de un informe y el acceso al profesor a los servicios configurados por cada equipo, para la revisión y evaluación de los mismos. 
+
+****

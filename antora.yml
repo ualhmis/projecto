@@ -1,0 +1,8 @@
+name: github-actions
+title: Integración Continua con GitHub Actions
+version: 0.26
+prerelease: -beta.1
+nav:
+- modules/ROOT/nav.adoc
+- modules/first-steps/nav.adoc
+

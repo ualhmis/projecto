@@ -1,0 +1,44 @@
+
+
+
+
+////
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:keywords: CI Actions Github
+:doctype: book
+:icons: font
+
+////
+/// activar btn:
+////
+:experimental:
+
+:source-highlighter: rouge
+:rouge-linenums-mode: inline
+
+// :highlightjsdir: ./highlight
+
+:figure-caption: Fig.
+:example-caption!: 
+
+
+:page-component-display-version: 0.26.1
+
+// :leveloffset: 1
+
+//includes
+:section: ROOT
+:sectionPath: modules/{section}/pages
+:imagesdir: modules/{section}/images
+include::{sectionPath}/index.adoc[]
+
+:section: first-steps
+:sectionPath: modules/{section}/pages
+:imagesdir: modules/{section}/images
+include::{sectionPath}/index.adoc[]
+include::{sectionPath}/first-project.adoc[leveloffset=+1]
