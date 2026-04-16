@@ -1,0 +1,92 @@
+= Iteración 1 - Login
+
+Desde ahora hasta el final de la asignatura vamos a desarrollar un proyecto sobre el que aplicar las herramientas y métodos que vamos introduciendo durante el curso.
+
+El proyecto tendrá un *login* y *registro de usuario*, así que vamos a comenzar por implementar esta funcionalidad.
+
+== Requisitos
+
+=== Requisitos no funcionales comunes
+
+* *Aplicación Web*: debe poder ejecutarse correctamente en los navegadores más utilizados (Chrome, Firefox, Edge, Safari) en sus últimas versiones.
+* *Opcional*: diseño responsive (adaptable a distintos dispositivos móviles / PC).
+* Usar por el equipo de desarrollo una *herramienta de control de versiones* (a elegir):
+** GitLab (en la máquina Azure del equipo)
+** *GitHub* (en GitHub.com con repositorio *privado* en la organización del equipo) _(recomendado)_
+* *Tecnología de implementación*: tenéis libertad para elegir el lenguaje o tecnología para implementar el proyecto. En principio, Java (Spring Boot) y JavaScript/TypeScript (Node.js, React, Angular, Vue) son válidas. También podéis elegir otros lenguajes o frameworks: .Net, Python (Django/FastAPI), etc.
+
+=== Requisitos funcionales comunes
+
+==== Autenticación y registro de usuarios (login)
+
+La aplicación debe cumplir las siguientes funcionalidades:
+
+* Permitir el *registro de nuevos usuarios*.
+* Permitir que el usuario registrado pueda hacer *login* (usuario/contraseña).
+* Se definen dos tipos de usuarios o *roles*: administrador y usuario (normal).
+
+El *usuario administrador* podrá:
+
+* Listar todos los usuarios registrados en el sistema.
+* Crear un usuario (asignando el rol de administrador o de usuario).
+* Modificar los datos de usuarios.
+* Eliminar usuarios.
+
+El *usuario normal* podrá, una vez logueado:
+
+* Modificar sus datos de perfil (email y contraseña).
+
+Un usuario logueado puede hacer *logout*.
+
+==== Requisitos funcionales específicos
+
+El objetivo será elegir un proyecto e ir completándolo, implementando funcionalidades basadas en la especificación de requisitos, modelado, diseño, implementación, pruebas, despliegue, etc.
+
+Se planteará una metodología basada en varias iteraciones hasta final de curso. En una segunda iteración cada equipo propondrá nuevas características (features) para incorporar a su proyecto.
+
+== Diseño de la BBDD para Login
+
+El modelo _orientativo_ de clases para la BBDD necesaria para la funcionalidad actual es el siguiente.
+
+image::login-db.png[Modelo de BBDD para Login, role="thumb", align="center"]
+
+La tabla `Usuario` almacena la información de los usuarios registrados en el sistema, incluyendo su nombre de usuario, contraseña (cifrada en formato hash), correo electrónico y rol (administrador o usuario normal).
+
+
+== Diseño de la interfaz de usuario
+
+Se ha utilizado la herramienta NinjaMock (www.ninjamock.com) para diseñar las vistas de usuario (páginas web, formularios,...) de la aplicación. Este diseño está disponible aquí: http://ninjamock.com/s/ulyqcs
+
+== Entregables
+
+Se piden las siguientes tareas:
+
+. *Crear un nuevo repositorio GitHub privado* para el proyecto e invitar al profesor.
+
+. *Crear un plan de trabajo* para el desarrollo del proyecto en equipo, repartiendo las tareas y estableciendo una política de ramas de Git.
+
+. *Configurar el proyecto en Jenkins* para que se realice la construcción del proyecto cada vez que se realice un push al repositorio. La construcción del proyecto en Jenkins se debe configurar desde el inicio del mismo. Debe incluir: 
+
+- ejecución de las pruebas unitarias.
+- cálculo de la cobertura de código de las pruebas unitarias.
+- análisis estático de código.
+- generación de un informe de calidad del código (por ejemplo, usando SonarQube) (opcional).
+- generación de la documentación del proyecto (por ejemplo, usando Javadoc o Sphinx).
+- análisis de vulnerabilidades de seguridad (por ejemplo, usando OWASP Dependency-Check).
+
+. *Realizar la implementación* de la funcionalidad de login indicada en el apartado de requisitos funcionales comunes, siguiendo el diseño de la BBDD y de la interfaz de usuario proporcionados (ver siguientes secciones)
++
+[NOTE]
+====
+Cada miembro del equipo utilizará su PC como entorno de desarrollo y la BBDD será local en cada PC. El diseño de la BBDD debe estar sincronizado entre los PCs de los desarrolladores mediante la compartición de un archivo `.sql` con el diseño (CREATE TABLES, INSERTS, etc.). Dicho archivo debe mantenerse dentro del repositorio de control de versiones.
+====
+
+. *Realizar pruebas unitarias* para probar la funcionalidad implementada.
+
+. *Realizar el juego de pruebas en Selenium* que permita probar toda la funcionalidad implementada, ejecutándose en local.
+
+== Despliegue en Azure
+
+La aplicación debe ser desplegada en Azure, bien usando una máquina virtual o bien usando webapps. Se recomienda utilizar los recursos gratuitos de Azure, en concreto para la base de datos.
+
+Una vez desplegada la aplicación en Azure, se deben *clonar los tests de Selenium* y cambiarlos para que prueben la aplicación funcionando en Azure (cambiando simplemente la URL base de `localhost` a la URL de la webapp).

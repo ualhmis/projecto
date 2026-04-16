@@ -1,0 +1,18 @@
+= Proyecto HMIS
+:navtitle: Iteración 1 - Login
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+.Objetivos
+====
+* Crear un repositorio GitHub privado para el proyecto e invitar al profesor.
+
+* Implementar la funcionalidad de *login y registro de usuarios* con dos roles: administrador y usuario normal.
+
+* Configurar un proyecto de integración continua en *Jenkins* que incluya pruebas, cobertura de código y análisis estático.
+
+* Realizar pruebas unitarias y un juego de pruebas con *Selenium* para verificar la funcionalidad implementada.
+====
+
+
