@@ -451,6 +451,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_diseño_de_la_interfaz_de_usuario">Diseño de la interfaz de usuario</a></li>
 <li><a href="#_entregables">Entregables</a></li>
 <li><a href="#_despliegue_en_azure">Despliegue en Azure</a></li>
+<li><a href="#_adaptación_de_pruebas_selenium_para_azure">Adaptación de pruebas Selenium para Azure</a></li>
+</ul>
+</li>
+<li><a href="#_iteración_2_nuevas_funcionalidades">Iteración 2 - Nuevas funcionalidades</a>
+<ul class="sectlevel2">
+<li><a href="#_propuesta_de_trabajo_para_la_iteración_2">Propuesta de trabajo para la iteración 2</a></li>
+<li><a href="#_entregables_2">Entregables</a></li>
 </ul>
 </li>
 </ul>
@@ -468,7 +475,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Joaquín Cañadas &lt;<a href="mailto:jjcanada@ual.es">jjcanada@ual.es</a>&gt;</p>
 </div>
 <div class="paragraph">
-<p><em>Version</em> <strong>0.26.1</strong></p>
+<p><em>Version</em> <strong>0.26.2</strong></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -702,8 +709,125 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>La aplicación debe ser desplegada en Azure, bien usando una máquina virtual o bien usando webapps. Se recomienda utilizar los recursos gratuitos de Azure, en concreto para la base de datos.</p>
 </div>
+<div class="sect3">
+<h4 id="_despliegue_en_azure_web_app">Despliegue en Azure Web App</h4>
+<div class="paragraph">
+<p>Si se elige el despliegue mediante <strong>Azure Web App</strong>, se debe crear también una <strong>base de datos</strong> como parte del proceso de puesta en marcha del entorno.</p>
+</div>
+<div class="paragraph">
+<p>Como guía general:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Crear el recurso de <strong>Web App</strong> en Azure.</p>
+</li>
+<li>
+<p>Durante la configuración, añadir la <strong>base de datos</strong> (por ejemplo, Azure Database for PostgreSQL/MySQL o Azure SQL, según la tecnología elegida en el proyecto). Es IMPORTANTE revisar el precio del servicio de base de datos, y elegir la opción más económica (generalmente, la opción de base de datos compartida o con recursos mínimos).</p>
+</li>
+<li>
+<p>Configurar las variables de entorno/cadenas de conexión en la Web App (URL de conexión, usuario, contraseña, nombre de base de datos, etc.).</p>
+</li>
+<li>
+<p>Publicar la aplicación y verificar que arranca correctamente conectando con la base de datos en Azure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Se recomienda documentar en el repositorio los parámetros de configuración necesarios (sin incluir credenciales reales), de forma que cualquier miembro del equipo pueda reproducir el despliegue.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_despliegue_con_contenedores_docker_opcional">Despliegue con contenedores Docker (opcional)</h4>
+<div class="paragraph">
+<p>Como alternativa, el despliegue también podría realizarse mediante <strong>contenedores Docker</strong> sobre una <strong>máquina virtual de Azure</strong>, instalando Docker en dicha VM y ejecutando allí los contenedores de la aplicación mediante Docker Compose.</p>
+</div>
+<div class="paragraph">
+<p>Esta opción no se ha trabajado en la asignatura, por lo que se cita únicamente como alternativa para los equipos que deseen adoptarla.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adaptación_de_pruebas_selenium_para_azure">Adaptación de pruebas Selenium para Azure</h3>
 <div class="paragraph">
 <p>Una vez desplegada la aplicación en Azure, se deben <strong>clonar los tests de Selenium</strong> y cambiarlos para que prueben la aplicación funcionando en Azure (cambiando simplemente la URL base de <code>localhost</code> a la URL de la webapp).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_iteración_2_nuevas_funcionalidades">Iteración 2 - Nuevas funcionalidades</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En esta iteración cada equipo propondrá nuevas funcionalidades (features) para incorporar a su proyecto. Estas funcionalidades deben ser acordes con el tipo de proyecto elegido, y deben ser suficientemente complejas para que permitan aplicar las herramientas y métodos de ingeniería del software que se han estudiado durante el curso.</p>
+</div>
+<div class="sect2">
+<h3 id="_propuesta_de_trabajo_para_la_iteración_2">Propuesta de trabajo para la iteración 2</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Elegir un dominio de aplicación sobre el que trabajar</strong>.</p>
+<div class="paragraph">
+<p>El equipo debe seleccionar un dominio realista y acotado para la nueva iteración. Además de los ejemplos habituales como reservas de citas en clínicas, creación de pedidos en restaurantes/bares, reservas de instalaciones deportivas; también pueden considerarse dominios similares como: reservas de salas de estudio, gestión de alquiler de material (bicicletas, equipos audiovisuales), turnos de atención en oficinas, gestión de talleres/cursos con inscripción, reservas de aparcamiento, etc.</p>
+</div>
+</li>
+<li>
+<p><strong>Especificación de nuevas funcionalidades</strong>.</p>
+<div class="paragraph">
+<p>Se deben definir al menos 3 nuevas funcionalidades (features) para implementar en esta iteración, relacionadas con el dominio seleccionado.</p>
+</div>
+</li>
+<li>
+<p><strong>Incorporar nueva funcionalidad</strong>.</p>
+<div class="paragraph">
+<p>La aplicación deberá ampliarse para que el usuario registrado pueda realizar varias operaciones <strong>CRUD</strong> sobre las entidades principales del dominio (consulta, inserción, modificación y, cuando proceda, eliminación).</p>
+</div>
+</li>
+<li>
+<p><strong>Evolución del proyecto</strong>.</p>
+<div class="paragraph">
+<p>Se deberán extender los juegos de pruebas para cubrir la nueva funcionalidad: pruebas unitarias, actualización de métricas de calidad (cobertura, análisis estático, etc.), actualización de la documentación técnica y ampliación de los tests de Selenium para validar los nuevos flujos funcionales. Todo ello debe verse reflejado en el proyecto de integración continua configurado en Jenkins, de forma que pueda observar la evolución de las gráficas y métricas en esta segunda iteración.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_entregables_2">Entregables</h3>
+<div class="paragraph">
+<p>El equipo debe presentar un documento con:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>La propuesta de <strong>nuevas funcionalidades (features)</strong> para implementar en esta iteración, justificando su elección y explicando brevemente en qué consisten. La especificación puede ser en lenguaje natural lo suficientemente clara y detallada para que se entienda el alcance de cada funcionalidad propuesta. Si se desea, de manera opcional, se pueden incluir diagramas UML para ilustrar mejor la funcionalidad propuesta.</p>
+</li>
+<li>
+<p>La evolución del <strong>histórico del repositorio</strong> en GitHub que refleje el trabajo realizado en equipo durante esta segunda iteración: la implementación de las nuevas funcionalidades, los tests unitarios, y pruebas de Selenium para cubrir la nueva funcionalidad. Para ello se pueden incorporar capturas de pantalla de los commits  y los Pull Requests realizados.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Como alternativa, se puede generar un informe de cambios (changelog) que resuma las modificaciones realizadas en esta iteración.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Capturas de pantalla del proyecto de <strong>integración continua en Jenkins</strong>, mostrando la evolución de las métricas y gráficas con respecto a la iteración anterior.</p>
+</li>
+<li>
+<p>Un <strong>resumen de lecciones aprendidas</strong> durante esta iteración, incluyendo los retos encontrados, cómo se han resuelto, y qué mejoras se podrían hacer en futuras iteraciones.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -711,7 +835,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-16 11:13:33 UTC
+Last updated 2026-05-26 09:52:07 UTC
 </div>
 </div>
 </body>

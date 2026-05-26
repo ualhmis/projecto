@@ -27,7 +27,7 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 :example-caption!: 
 
 
-:page-component-display-version: 0.26.1
+:page-component-display-version: 0.26.2
 
 // :leveloffset: 1
 
@@ -42,3 +42,5 @@ include::{sectionPath}/index.adoc[]
 :imagesdir: modules/{section}/images
 include::{sectionPath}/index.adoc[]
 include::{sectionPath}/first-project.adoc[leveloffset=+1]
+
+include::{sectionPath}/project-second-iteration.adoc[leveloffset=+1]
