@@ -1,0 +1,36 @@
+= Iteración 2 - Nuevas funcionalidades
+
+En esta iteración cada equipo propondrá nuevas funcionalidades (features) para incorporar a su proyecto. Estas funcionalidades deben ser acordes con el tipo de proyecto elegido, y deben ser suficientemente complejas para que permitan aplicar las herramientas y métodos de ingeniería del software que se han estudiado durante el curso.
+
+== Propuesta de trabajo para la iteración 2
+
+. *Elegir un dominio de aplicación sobre el que trabajar*.
++
+El equipo debe seleccionar un dominio realista y acotado para la nueva iteración. Además de los ejemplos habituales como reservas de citas en clínicas, creación de pedidos en restaurantes/bares, reservas de instalaciones deportivas; también pueden considerarse dominios similares como: reservas de salas de estudio, gestión de alquiler de material (bicicletas, equipos audiovisuales), turnos de atención en oficinas, gestión de talleres/cursos con inscripción, reservas de aparcamiento, etc.
+
+. *Especificación de nuevas funcionalidades*.
++
+Se deben definir al menos 3 nuevas funcionalidades (features) para implementar en esta iteración, relacionadas con el dominio seleccionado. 
+
+. *Incorporar nueva funcionalidad*.
++
+La aplicación deberá ampliarse para que el usuario registrado pueda realizar varias operaciones *CRUD* sobre las entidades principales del dominio (consulta, inserción, modificación y, cuando proceda, eliminación).
+
+. *Evolución del proyecto*.
++
+Se deberán extender los juegos de pruebas para cubrir la nueva funcionalidad: pruebas unitarias, actualización de métricas de calidad (cobertura, análisis estático, etc.), actualización de la documentación técnica y ampliación de los tests de Selenium para validar los nuevos flujos funcionales. Todo ello debe verse reflejado en el proyecto de integración continua configurado en Jenkins, de forma que pueda observar la evolución de las gráficas y métricas en esta segunda iteración.
+
+== Entregables
+
+El equipo debe presentar un documento con:
+
+. La propuesta de *nuevas funcionalidades (features)* para implementar en esta iteración, justificando su elección y explicando brevemente en qué consisten. La especificación puede ser en lenguaje natural lo suficientemente clara y detallada para que se entienda el alcance de cada funcionalidad propuesta. Si se desea, de manera opcional, se pueden incluir diagramas UML para ilustrar mejor la funcionalidad propuesta.
+
+. La evolución del *histórico del repositorio* en GitHub que refleje el trabajo realizado en equipo durante esta segunda iteración: la implementación de las nuevas funcionalidades, los tests unitarios, y pruebas de Selenium para cubrir la nueva funcionalidad. Para ello se pueden incorporar capturas de pantalla de los commits  y los Pull Requests realizados. 
+
+NOTE: Como alternativa, se puede generar un informe de cambios (changelog) que resuma las modificaciones realizadas en esta iteración.
+
+[start=3]
+. Capturas de pantalla del proyecto de *integración continua en Jenkins*, mostrando la evolución de las métricas y gráficas con respecto a la iteración anterior.
+
+. Un *resumen de lecciones aprendidas* durante esta iteración, incluyendo los retos encontrados, cómo se han resuelto, y qué mejoras se podrían hacer en futuras iteraciones.

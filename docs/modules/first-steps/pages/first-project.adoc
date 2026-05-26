@@ -89,4 +89,26 @@ Cada miembro del equipo utilizará su PC como entorno de desarrollo y la BBDD se
 
 La aplicación debe ser desplegada en Azure, bien usando una máquina virtual o bien usando webapps. Se recomienda utilizar los recursos gratuitos de Azure, en concreto para la base de datos.
 
+=== Despliegue en Azure Web App
+
+Si se elige el despliegue mediante *Azure Web App*, se debe crear también una *base de datos* como parte del proceso de puesta en marcha del entorno.
+
+Como guía general:
+
+* Crear el recurso de *Web App* en Azure.
+* Durante la configuración, añadir la *base de datos* (por ejemplo, Azure Database for PostgreSQL/MySQL o Azure SQL, según la tecnología elegida en el proyecto). Es IMPORTANTE revisar el precio del servicio de base de datos, y elegir la opción más económica (generalmente, la opción de base de datos compartida o con recursos mínimos).
+* Configurar las variables de entorno/cadenas de conexión en la Web App (URL de conexión, usuario, contraseña, nombre de base de datos, etc.).
+* Publicar la aplicación y verificar que arranca correctamente conectando con la base de datos en Azure.
+
+Se recomienda documentar en el repositorio los parámetros de configuración necesarios (sin incluir credenciales reales), de forma que cualquier miembro del equipo pueda reproducir el despliegue.
+
+=== Despliegue con contenedores Docker (opcional)
+
+Como alternativa, el despliegue también podría realizarse mediante *contenedores Docker* sobre una *máquina virtual de Azure*, instalando Docker en dicha VM y ejecutando allí los contenedores de la aplicación mediante Docker Compose.
+
+Esta opción no se ha trabajado en la asignatura, por lo que se cita únicamente como alternativa para los equipos que deseen adoptarla.
+
+== Adaptación de pruebas Selenium para Azure
+
 Una vez desplegada la aplicación en Azure, se deben *clonar los tests de Selenium* y cambiarlos para que prueben la aplicación funcionando en Azure (cambiando simplemente la URL base de `localhost` a la URL de la webapp).
+
